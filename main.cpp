@@ -5,7 +5,7 @@
 #include <list>
 #include <set>
 #include <algorithm>
-using namespace std;
+using namespace std; 
 using namespace std::chrono;
 
 int main() {
@@ -25,7 +25,7 @@ int main() {
         code_lst[i] = curr_code;
     }
 
-    // reading test
+    // reading  test
     // set reading
     auto start = high_resolution_clock::now();
     for(int i = 0; i < 20000; i++) {
