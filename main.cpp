@@ -104,10 +104,10 @@ tuple<int, int, int> runSorting() {
     sorting[0] = -1;
 
     // vector sorting
-    start = high_resolution_clock::now();
+    auto start = high_resolution_clock::now();
     sort(vec1.begin(), vec1.end());
-    end = high_resolution_clock::now();
-    duration = duration_cast<microseconds>(end - start);
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(end - start);
     sorting[1] = duration.count();
 
     // list sorting
@@ -119,14 +119,14 @@ tuple<int, int, int> runSorting() {
 }
 
 
-//function runs race to see how long each type takes to read a set of codes
-tuple<int, int, int> runSorting() {
+//function runs race to see how long each type takes to insert into a set of codes
+tuple<int, int, int> runInserting() {
     
     string code_lst[20000];
     string curr_code;
     ifstream file("codes.txt");
 
-    int sorting[3];
+    int inserting[3];
     set<string> set1;
     vector<string> vec1;
     list<string> lst1;
@@ -135,30 +135,12 @@ tuple<int, int, int> runSorting() {
         code_lst[i] = curr_code;
     }
 
-    // sorting test
-    // set sorting
-    sorting[0] = -1;
-
-    // vector sorting
-    start = high_resolution_clock::now();
-    sort(vec1.begin(), vec1.end());
-    end = high_resolution_clock::now();
-    duration = duration_cast<microseconds>(end - start);
-    sorting[1] = duration.count();
-
-    // list sorting
-    start = high_resolution_clock::now();
-    lst1.sort();
-    end = high_resolution_clock::now();
-    duration = duration_cast<microseconds>(end - start);
-    sorting[2] = duration.count();
-
     // insertion
     // set insert
-    start = high_resolution_clock::now();
+    auto start = high_resolution_clock::now();
     set1.insert("TESTCODE");
-    end = high_resolution_clock::now();
-    duration = duration_cast<microseconds>(end - start);
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(end - start);
     inserting[0] = duration.count();
 
     // vector insert
@@ -182,10 +164,29 @@ tuple<int, int, int> runSorting() {
     duration = duration_cast<microseconds>(end - start);
     inserting[2] = duration.count();
     
+}
+
+
+//function runs race to see how long each type takes to delete middle value of a set of codes
+tuple<int, int, int> runDeleting() {
+    
+    string code_lst[20000];
+    string curr_code;
+    ifstream file("codes.txt");
+
+    int deleting[3];
+    set<string> set1;
+    vector<string> vec1;
+    list<string> lst1;
+
+    for(int i = 0; getline(file, curr_code); i++) {
+        code_lst[i] = curr_code;
+    }
+    
     // delete race
     // set delete
-    start = high_resolution_clock::now();
-    cnt = 1;
+    auto start = high_resolution_clock::now();
+    int cnt = 1;
     for(auto i = set1.begin(); i != set1.end(); i++) {
         if (cnt == 10001) {
             set1.erase(i);
@@ -193,8 +194,8 @@ tuple<int, int, int> runSorting() {
         }
         cnt += 1;
     }
-    end = high_resolution_clock::now();
-    duration = duration_cast<microseconds>(end - start);
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(end - start);
     deleting[0] = duration.count();
 
     // vector delete
