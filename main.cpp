@@ -22,6 +22,20 @@ int main() {
     int inserting[2][3];
     int deleting[2][3];
 
+    //set initial sums to 0
+    reading[1][0] = 0;
+    reading[1][1] = 0;
+    reading[1][2] = 0;
+    sorting[1][0] = 0;
+    sorting[1][1] = 0;
+    sorting[1][2] = 0;
+    inserting[1][0] = 0;
+    inserting[1][1] = 0;
+    inserting[1][2] = 0;
+    deleting[1][0] = 0;
+    deleting[1][1] = 0;
+    deleting[1][2] = 0;
+
     // run tests
     // run reading
     auto [temp1, temp2, temp3] = runReading();
@@ -33,7 +47,7 @@ int main() {
     reading[1][2] += reading[0][2];
     
     // run sorting
-    auto [temp1b, temp2b, temp3b] = runReading();
+    auto [temp1b, temp2b, temp3b] = runSorting();
     sorting[0][0] = temp1b;
     sorting[1][0] += sorting[0][0];
     sorting[0][1] = temp2b;
@@ -42,7 +56,7 @@ int main() {
     sorting[1][2] += sorting[0][2];
     
     // run inserting
-    auto [temp1c, temp2c, temp3c] = runReading();
+    auto [temp1c, temp2c, temp3c] = runInserting();
     inserting[0][0] = temp1c;
     inserting[1][0] += inserting[0][0];
     inserting[0][1] = temp2c;
@@ -51,7 +65,7 @@ int main() {
     inserting[1][2] += inserting[0][2];
 
     // run deleting
-    auto [temp1d, temp2d, temp3d] = runReading();
+    auto [temp1d, temp2d, temp3d] = runDeleting();
     deleting[0][0] = temp1d;
     deleting[1][0] += deleting[0][0];
     deleting[0][1] = temp2d;
@@ -247,7 +261,7 @@ tuple<int, int, int> runDeleting() {
     for(int i = 0; i < 20000; i++) {
         lst1.push_back(code_lst[i]);
     }
-    
+
     // delete race
     // set delete
     auto start = high_resolution_clock::now();
