@@ -269,13 +269,9 @@ tuple<int, int, int> runDeleting() {
     // set delete
     auto start = high_resolution_clock::now();
     int cnt = 1;
-    for(auto i = set1.begin(); i != set1.end(); i++) {
-        if (cnt == 10001) {
-            set1.erase(i);
-            break;
-        }
-        cnt += 1;
-    }
+    auto i = set1.begin();
+    advance(i, 10000);
+    set1.erase(i);
     auto end = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(end - start);
     deleting[0] = duration.count();
