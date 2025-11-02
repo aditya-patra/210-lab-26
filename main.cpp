@@ -33,38 +33,38 @@ int main() {
     reading[1][2] += reading[0][2];
     
     // run sorting
-    auto [temp1, temp2, temp3] = runReading();
-    reading[0][0] = temp1;
-    reading[1][0] += reading[0][0];
-    reading[0][1] = temp1;
-    reading[1][1] += reading[0][1];
-    reading[0][2] = temp1;
-    reading[1][2] += reading[0][2];
+    auto [temp1b, temp2b, temp3b] = runReading();
+    sorting[0][0] = temp1b;
+    sorting[1][0] += sorting[0][0];
+    sorting[0][1] = temp2b;
+    sorting[1][1] += sorting[0][1];
+    sorting[0][2] = temp3b;
+    sorting[1][2] += sorting[0][2];
     
     // run inserting
-    auto [temp1, temp2, temp3] = runReading();
-    reading[0][0] = temp1;
-    reading[1][0] += reading[0][0];
-    reading[0][1] = temp1;
-    reading[1][1] += reading[0][1];
-    reading[0][2] = temp1;
-    reading[1][2] += reading[0][2];
+    auto [temp1c, temp2c, temp3c] = runReading();
+    inserting[0][0] = temp1c;
+    inserting[1][0] += inserting[0][0];
+    inserting[0][1] = temp2c;
+    inserting[1][1] += inserting[0][1];
+    inserting[0][2] = temp3c;
+    inserting[1][2] += inserting[0][2];
 
     // run deleting
-    auto [temp1, temp2, temp3] = runReading();
-    reading[0][0] = temp1;
-    reading[1][0] += reading[0][0];
-    reading[0][1] = temp1;
-    reading[1][1] += reading[0][1];
-    reading[0][2] = temp1;
-    reading[1][2] += reading[0][2];
+    auto [temp1d, temp2d, temp3d] = runReading();
+    deleting[0][0] = temp1d;
+    deleting[1][0] += deleting[0][0];
+    deleting[0][1] = temp2d;
+    deleting[1][1] += deleting[0][1];
+    deleting[0][2] = temp3d;
+    deleting[1][2] += deleting[0][2];
 
     //output
     cout << "Operation    Vector    List    Set" << endl;
-    cout << "Read         " << reading[1] << "      " << reading[2] << "    " << reading[0] << endl;
-    cout << "Sort         " << sorting[1] << "      " << sorting[2] << "    " << sorting[0] << endl;
-    cout << "Insert       " << inserting[1] << "        " << inserting[2] << "     " << inserting[0] << endl;
-    cout << "Delete       " << deleting[1] << "        " << deleting[2] << "     " << deleting[0] << endl;
+    cout << "Read         " << reading[1][1] << "      " << reading[1][2] << "    " << reading[1][0] << endl;
+    cout << "Sort         " << sorting[1][1] << "      " << sorting[1][2] << "    " << sorting[1][0] << endl;
+    cout << "Insert       " << inserting[1][1] << "        " << inserting[1][2] << "     " << inserting[1][0] << endl;
+    cout << "Delete       " << deleting[1][1] << "        " << deleting[1][2] << "     " << deleting[1][0] << endl;
     return 0;
 }
 
