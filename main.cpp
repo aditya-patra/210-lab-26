@@ -6,6 +6,7 @@
 #include <set>
 #include <tuple>
 #include <algorithm>
+#include <iomanip>
 using namespace std; 
 using namespace std::chrono;
 
@@ -76,11 +77,11 @@ int main() {
     }
 
     //output
-    cout << "Operation    Vector    List    Set" << endl;
-    cout << "Read         " << reading[1][1] / 15 << "      " << reading[1][2] / 15 << "    " << reading[1][0] / 15 << endl;
-    cout << "Sort         " << sorting[1][1] / 15 << "      " << sorting[1][2] / 15 << "    " << sorting[1][0] / 15 << endl;
-    cout << "Insert       " << inserting[1][1] / 15 << "        " << inserting[1][2] / 15 << "     " << inserting[1][0] / 15 << endl;
-    cout << "Delete       " << deleting[1][1] / 15 << "        " << deleting[1][2] / 15 << "     " << deleting[1][0] / 15 << endl;
+    cout << "Operation Vector   List    Set" << endl;
+    cout << setw(9) << "Read" << setw(7) << reading[1][1] / 15 << setw(7)  << reading[1][2] / 15 << setw(7)  << reading[1][0] / 15 << endl;
+    cout << setw(9)  << "Sort" << setw(7)  << sorting[1][1] / 15 << setw(7)  << sorting[1][2] / 15 << setw(7)  << sorting[1][0] / 15 << endl;
+    cout << setw(9)  << "Insert" << setw(7)  << inserting[1][1] / 15 << setw(7)  << inserting[1][2] / 15 << setw(7)  << inserting[1][0] / 15 << endl;
+    cout << setw(9)  << "Delete" << setw(7)  << deleting[1][1] / 15 << setw(7)  << deleting[1][2] / 15 << setw(7)  << deleting[1][0] / 15 << endl;
     return 0;
 }
 
