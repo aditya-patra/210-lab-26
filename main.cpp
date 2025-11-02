@@ -76,9 +76,6 @@ tuple<int, int, int> runReading() {
     ifstream file("codes.txt");
 
     int reading[3];
-    int sorting[3];
-    int inserting[3];
-    int deleting[3];
     set<string> set1;
     vector<string> vec1;
     list<string> lst1;
@@ -118,10 +115,8 @@ tuple<int, int, int> runReading() {
     return tup;
 }
 
-
 //function runs race to see how long each type takes to sort a set of codes
 tuple<int, int, int> runSorting() {
-    
     string code_lst[20000];
     string curr_code;
     ifstream file("codes.txt");
@@ -133,6 +128,17 @@ tuple<int, int, int> runSorting() {
 
     for(int i = 0; file >> curr_code; i++) {
         code_lst[i] = curr_code;
+    }
+
+    //fill set, vec, and list
+    for(int i = 0; i < 20000; i++) {
+        set1.insert(code_lst[i]);
+    }
+    for(int i = 0; i < 20000; i++) {
+        vec1.push_back(code_lst[i]);
+    }
+    for(int i = 0; i < 20000; i++) {
+        lst1.push_back(code_lst[i]);
     }
 
     // sorting test
@@ -156,7 +162,6 @@ tuple<int, int, int> runSorting() {
     return tup;
 }
 
-
 //function runs race to see how long each type takes to insert into a set of codes
 tuple<int, int, int> runInserting() {
     
@@ -168,6 +173,17 @@ tuple<int, int, int> runInserting() {
     set<string> set1;
     vector<string> vec1;
     list<string> lst1;
+
+    //fill set, vec, and list
+    for(int i = 0; i < 20000; i++) {
+        set1.insert(code_lst[i]);
+    }
+    for(int i = 0; i < 20000; i++) {
+        vec1.push_back(code_lst[i]);
+    }
+    for(int i = 0; i < 20000; i++) {
+        lst1.push_back(code_lst[i]);
+    }
 
     for(int i = 0; file >> curr_code; i++) {
         code_lst[i] = curr_code;
@@ -205,7 +221,6 @@ tuple<int, int, int> runInserting() {
     return tup;
 }
 
-
 //function runs race to see how long each type takes to delete middle value of a set of codes
 tuple<int, int, int> runDeleting() {
     
@@ -220,6 +235,17 @@ tuple<int, int, int> runDeleting() {
 
     for(int i = 0; file >> curr_code; i++) {
         code_lst[i] = curr_code;
+    }
+    
+    //fill set, vec, and list
+    for(int i = 0; i < 20000; i++) {
+        set1.insert(code_lst[i]);
+    }
+    for(int i = 0; i < 20000; i++) {
+        vec1.push_back(code_lst[i]);
+    }
+    for(int i = 0; i < 20000; i++) {
+        lst1.push_back(code_lst[i]);
     }
     
     // delete race
