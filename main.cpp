@@ -21,7 +21,15 @@ int main() {
     int sorting[2][3];
     int inserting[2][3];
     int deleting[2][3];
+
+    // run tests
     auto [temp1, temp2, temp3] = runReading();
+    reading[0][0] = temp1;
+    reading[1][0] += reading[0][0];
+    reading[0][1] = temp1;
+    reading[1][1] += reading[0][1];
+    reading[0][2] = temp1;
+    reading[1][2] += reading[0][2];
 
     //output
     cout << "Operation    Vector    List    Set" << endl;
