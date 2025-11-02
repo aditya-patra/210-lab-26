@@ -47,7 +47,7 @@ tuple<int, int, int> runReading() {
     vector<string> vec1;
     list<string> lst1;
 
-    for(int i = 0; getline(file, curr_code); i++) {
+    for(int i = 0; file >> curr_code; i++) {
         code_lst[i] = curr_code;
     }
 
@@ -95,7 +95,7 @@ tuple<int, int, int> runSorting() {
     vector<string> vec1;
     list<string> lst1;
 
-    for(int i = 0; getline(file, curr_code); i++) {
+    for(int i = 0; file >> curr_code; i++) {
         code_lst[i] = curr_code;
     }
 
@@ -116,6 +116,8 @@ tuple<int, int, int> runSorting() {
     end = high_resolution_clock::now();
     duration = duration_cast<microseconds>(end - start);
     sorting[2] = duration.count();
+    tuple<int, int, int> tup = {sorting[0], sorting[1], sorting[2]};
+    return tup;
 }
 
 
@@ -131,7 +133,7 @@ tuple<int, int, int> runInserting() {
     vector<string> vec1;
     list<string> lst1;
 
-    for(int i = 0; getline(file, curr_code); i++) {
+    for(int i = 0; file >> curr_code; i++) {
         code_lst[i] = curr_code;
     }
 
@@ -163,7 +165,8 @@ tuple<int, int, int> runInserting() {
     end = high_resolution_clock::now();
     duration = duration_cast<microseconds>(end - start);
     inserting[2] = duration.count();
-    
+    tuple<int, int, int> tup = {inserting[0], inserting[1], inserting[2]};
+    return tup;
 }
 
 
@@ -179,7 +182,7 @@ tuple<int, int, int> runDeleting() {
     vector<string> vec1;
     list<string> lst1;
 
-    for(int i = 0; getline(file, curr_code); i++) {
+    for(int i = 0; file >> curr_code; i++) {
         code_lst[i] = curr_code;
     }
     
@@ -218,4 +221,6 @@ tuple<int, int, int> runDeleting() {
     end = high_resolution_clock::now();
     duration = duration_cast<microseconds>(end - start);
     deleting[2] = duration.count();
+    tuple<int, int, int> tup = {deleting[0], deleting[1], deleting[2]};
+    return tup;
 }
