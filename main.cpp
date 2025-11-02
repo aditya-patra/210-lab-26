@@ -75,10 +75,10 @@ int main() {
 
     //output
     cout << "Operation    Vector    List    Set" << endl;
-    cout << "Read         " << reading[1][1] << "      " << reading[1][2] << "    " << reading[1][0] << endl;
-    cout << "Sort         " << sorting[1][1] << "      " << sorting[1][2] << "    " << sorting[1][0] << endl;
-    cout << "Insert       " << inserting[1][1] << "        " << inserting[1][2] << "     " << inserting[1][0] << endl;
-    cout << "Delete       " << deleting[1][1] << "        " << deleting[1][2] << "     " << deleting[1][0] << endl;
+    cout << "Read         " << reading[0][1] << "      " << reading[0][2] << "    " << reading[0][0] << endl;
+    cout << "Sort         " << sorting[0][1] << "      " << sorting[0][2] << "    " << sorting[0][0] << endl;
+    cout << "Insert       " << inserting[0][1] << "        " << inserting[0][2] << "     " << inserting[0][0] << endl;
+    cout << "Delete       " << deleting[0][1] << "        " << deleting[0][2] << "     " << deleting[0][0] << endl;
     return 0;
 }
 
