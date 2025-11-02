@@ -8,7 +8,25 @@
 using namespace std; 
 using namespace std::chrono;
 
+tuple <int, int, int> runRace();
+
 int main() {
+    int reading[2][3];
+    int sorting[2][3];
+    int inserting[2][3];
+    int deleting[2][3];
+    auto [reading[0], sorting[0], inserting[0], deleting[0]] = runRace();
+    //output
+    cout << "Operation    Vector    List    Set" << endl;
+    cout << "Read         " << reading[1] << "      " << reading[2] << "    " << reading[0] << endl;
+    cout << "Sort         " << sorting[1] << "      " << sorting[2] << "    " << sorting[0] << endl;
+    cout << "Insert       " << inserting[1] << "        " << inserting[2] << "     " << inserting[0] << endl;
+    cout << "Delete       " << deleting[1] << "        " << deleting[2] << "     " << deleting[0] << endl;
+    return 0;
+}
+
+tuple <int, int, int> runRace() {
+    
     string code_lst[20000];
     string curr_code;
     ifstream file("codes.txt");
@@ -135,12 +153,4 @@ int main() {
     end = high_resolution_clock::now();
     duration = duration_cast<microseconds>(end - start);
     deleting[2] = duration.count();
-
-    //output
-    cout << "Operation    Vector    List    Set" << endl;
-    cout << "Read         " << reading[1] << "      " << reading[2] << "    " << reading[0] << endl;
-    cout << "Sort         " << sorting[1] << "      " << sorting[2] << "    " << sorting[0] << endl;
-    cout << "Insert       " << inserting[1] << "        " << inserting[2] << "     " << inserting[0] << endl;
-    cout << "Delete       " << deleting[1] << "        " << deleting[2] << "     " << deleting[0] << endl;
-    return 0;
 }
