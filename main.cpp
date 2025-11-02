@@ -8,14 +8,14 @@
 using namespace std; 
 using namespace std::chrono;
 
-tuple <int, int, int> runRace();
+tuple<int, int, int, int> runRace();
 
 int main() {
     int reading[2][3];
     int sorting[2][3];
     int inserting[2][3];
     int deleting[2][3];
-    auto [reading[0], sorting[0], inserting[0], deleting[0]] = runRace();
+    [reading[0][0], sorting[0][0], inserting[0][0], deleting[0][0]] = runRace();
     //output
     cout << "Operation    Vector    List    Set" << endl;
     cout << "Read         " << reading[1] << "      " << reading[2] << "    " << reading[0] << endl;
@@ -25,7 +25,7 @@ int main() {
     return 0;
 }
 
-tuple <int, int, int> runRace() {
+tuple<int, int, int, int> runRace() {
     
     string code_lst[20000];
     string curr_code;
