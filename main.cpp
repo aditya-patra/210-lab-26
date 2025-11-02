@@ -83,17 +83,14 @@ tuple<int, int, int> runReading() {
 }
 
 
-//function runs race to see how long each type takes to read a set of codes
-tuple<int, int, int> runRace() {
+//function runs race to see how long each type takes to sort a set of codes
+tuple<int, int, int> runSorting() {
     
     string code_lst[20000];
     string curr_code;
     ifstream file("codes.txt");
 
-    int reading[3];
     int sorting[3];
-    int inserting[3];
-    int deleting[3];
     set<string> set1;
     vector<string> vec1;
     list<string> lst1;
@@ -102,33 +99,41 @@ tuple<int, int, int> runRace() {
         code_lst[i] = curr_code;
     }
 
-    // reading  test
-    // set reading
-    auto start = high_resolution_clock::now();
-    for(int i = 0; i < 20000; i++) {
-        set1.insert(code_lst[i]);
-    }
-    auto end = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(end - start);
-    reading[0] = duration.count();
+    // sorting test
+    // set sorting
+    sorting[0] = -1;
 
-    // vector reading
+    // vector sorting
     start = high_resolution_clock::now();
-    for(int i = 0; i < 20000; i++) {
-        vec1.push_back(code_lst[i]);
-    }
+    sort(vec1.begin(), vec1.end());
     end = high_resolution_clock::now();
     duration = duration_cast<microseconds>(end - start);
-    reading[1] = duration.count();
+    sorting[1] = duration.count();
 
-    // list reading
+    // list sorting
     start = high_resolution_clock::now();
-    for(int i = 0; i < 20000; i++) {
-        lst1.push_back(code_lst[i]);
-    }
+    lst1.sort();
     end = high_resolution_clock::now();
     duration = duration_cast<microseconds>(end - start);
-    reading[2] = duration.count();
+    sorting[2] = duration.count();
+}
+
+
+//function runs race to see how long each type takes to read a set of codes
+tuple<int, int, int> runSorting() {
+    
+    string code_lst[20000];
+    string curr_code;
+    ifstream file("codes.txt");
+
+    int sorting[3];
+    set<string> set1;
+    vector<string> vec1;
+    list<string> lst1;
+
+    for(int i = 0; getline(file, curr_code); i++) {
+        code_lst[i] = curr_code;
+    }
 
     // sorting test
     // set sorting
