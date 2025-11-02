@@ -23,6 +23,34 @@ int main() {
     int deleting[2][3];
 
     // run tests
+    // run reading
+    auto [temp1, temp2, temp3] = runReading();
+    reading[0][0] = temp1;
+    reading[1][0] += reading[0][0];
+    reading[0][1] = temp1;
+    reading[1][1] += reading[0][1];
+    reading[0][2] = temp1;
+    reading[1][2] += reading[0][2];
+    
+    // run sorting
+    auto [temp1, temp2, temp3] = runReading();
+    reading[0][0] = temp1;
+    reading[1][0] += reading[0][0];
+    reading[0][1] = temp1;
+    reading[1][1] += reading[0][1];
+    reading[0][2] = temp1;
+    reading[1][2] += reading[0][2];
+    
+    // run inserting
+    auto [temp1, temp2, temp3] = runReading();
+    reading[0][0] = temp1;
+    reading[1][0] += reading[0][0];
+    reading[0][1] = temp1;
+    reading[1][1] += reading[0][1];
+    reading[0][2] = temp1;
+    reading[1][2] += reading[0][2];
+
+    // run deleting
     auto [temp1, temp2, temp3] = runReading();
     reading[0][0] = temp1;
     reading[1][0] += reading[0][0];
