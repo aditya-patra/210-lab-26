@@ -4,6 +4,7 @@
 #include <vector>
 #include <list>
 #include <set>
+#include <tuple>
 #include <algorithm>
 using namespace std; 
 using namespace std::chrono;
@@ -15,7 +16,7 @@ int main() {
     int sorting[2][3];
     int inserting[2][3];
     int deleting[2][3];
-    [reading[0][0], sorting[0][0], inserting[0][0], deleting[0][0]] = runRace();
+    auto [temp1, temp2, temp3, temp4] = runRace();
     //output
     cout << "Operation    Vector    List    Set" << endl;
     cout << "Read         " << reading[1] << "      " << reading[2] << "    " << reading[0] << endl;
