@@ -9,14 +9,20 @@
 using namespace std; 
 using namespace std::chrono;
 
-tuple<int, int, int, int> runRace();
+tuple<int, int, int, int> runReading();
+tuple<int, int, int, int> runSorting();
+tuple<int, int, int, int> runInserting();
+tuple<int, int, int, int> runDeleting();
 
 int main() {
+    // first row of each array is for storing the latest race results
+    // second row of each array stores cummulative results
     int reading[2][3];
     int sorting[2][3];
     int inserting[2][3];
     int deleting[2][3];
     auto [temp1, temp2, temp3, temp4] = runRace();
+
     //output
     cout << "Operation    Vector    List    Set" << endl;
     cout << "Read         " << reading[1] << "      " << reading[2] << "    " << reading[0] << endl;
